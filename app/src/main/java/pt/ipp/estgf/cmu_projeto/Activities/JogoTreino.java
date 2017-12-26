@@ -3,6 +3,8 @@ package pt.ipp.estgf.cmu_projeto.Activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import pt.ipp.estgf.cmu_projeto.R;
+
 public class JogoTreino extends AppCompatActivity {
 
     @Override
