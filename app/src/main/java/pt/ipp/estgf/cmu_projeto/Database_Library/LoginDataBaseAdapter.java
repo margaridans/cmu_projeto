@@ -11,7 +11,6 @@ import pt.ipp.estgf.cmu_projeto.Database_Library.Database.MyDbHelper;
 
 public class LoginDataBaseAdapter {
 
-    public static final int NAME_COLUMN = 1;
 
     public SQLiteDatabase db;
     private final Context context;
@@ -19,8 +18,7 @@ public class LoginDataBaseAdapter {
 
     public LoginDataBaseAdapter(Context _context) {
         context = _context;
-        dbHelper = new MyDbHelper(context, DATABASE_NAME, null,
-                DATABASE_VERSION);
+        dbHelper = new MyDbHelper(context, "KidsZone", null,1);
     }
 
     public LoginDataBaseAdapter open() throws SQLException {
@@ -36,24 +34,18 @@ public class LoginDataBaseAdapter {
         return db;
     }
 
-    public void insertEntry(String userName, String password) {
+    public void insertEntry(String nome_user, String pass_user) {
         ContentValues newValues = new ContentValues();
-        newValues.put("USERNAME", userName);
-        newValues.put("PASSWORD", password);
-        db.insert("LOGIN", null, newValues);
+        newValues.put("USERNAME", nome_user);
+        newValues.put("PASSWORD", pass_user);
+        db.insert("tblUser", null, newValues);
 
     }
 
-    public int deleteEntry(String UserName) {
 
-        String where = "USERNAME=?";
-        int numberOFEntriesDeleted = db.delete("LOGIN", where,
-                new String[] { UserName });
-        return numberOFEntriesDeleted;
-    }
 
     public String getSinlgeEntry(String userName) {
-        Cursor cursor = db.query("LOGIN", null, " USERNAME=?",
+        Cursor cursor = db.query("tblUser", null, " USERNAME=?",
                 new String[] { userName }, null, null, null);
         if (cursor.getCount() < 1) {
             cursor.close();

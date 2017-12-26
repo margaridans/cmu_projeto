@@ -15,7 +15,7 @@ import pt.ipp.estgf.cmu_projeto.Database_Library.Model.Pergunta;
 public class MyDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "KidsZone";
     private static final int DATABASE_VERSION = 1;
-    private Categoria categorias;
+
 
     public MyDbHelper(Context context1, String databaseName, Context context, int databaseVersion) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -33,25 +33,25 @@ public class SignUPActivity extends Activity {
 
             public void onClick(View v) {
 
-                String userName = editTextUserName.getText().toString();
-                String password = editTextPassword.getText().toString();
+                String nome_user = editTextUserName.getText().toString();
+                String pass_user = editTextPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText()
                         .toString();
-                if (userName.equals("") || password.equals("")
+                if (nome_user.equals("") || pass_user.equals("")
                         || confirmPassword.equals("")) {
 
                     Toast.makeText(getApplicationContext(), "Field Vaccant",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
-                if (!password.equals(confirmPassword)) {
+                if (!pass_user.equals(confirmPassword)) {
                     Toast.makeText(getApplicationContext(),
                             "Password does not match", Toast.LENGTH_LONG)
                             .show();
                     return;
                 } else {
 
-                    loginDataBaseAdapter.insertEntry(userName, password);
+                    loginDataBaseAdapter.insertEntry(nome_user, pass_user);
                     Toast.makeText(getApplicationContext(),
                             "Account Successfully Created ", Toast.LENGTH_LONG)
                             .show();
