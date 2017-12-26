@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
  */
 
 public class Pontuacao {
-    public static String NAME_TABLE = "tblPontuacao", ID_PONT="id_pontuacao", ;
+    public static String NAME_TABLE = "tblPontuacao", ID_PONT="id_pontuacao", PONTUACAO="pontuacao", USER="nome_user";
     private int id_pontuacao;
     private int pontuacao;
     private String nome_user;
@@ -52,7 +52,7 @@ public class Pontuacao {
 
     public boolean addPontuacao(SQLiteDatabase db) {
         try {
-            db.execSQL("INSERT INTO " + NAME_TABLE + "(" + NOME_DIFIC + ")VALUES ('" + dificuldade_name + "');");
+            db.execSQL("INSERT INTO " + NAME_TABLE + "(" + PONTUACAO + ")VALUES ('" + pontuacao + "');");
             return true;
         } catch (SQLException ex) {
             db.close();
@@ -62,7 +62,7 @@ public class Pontuacao {
 
     public boolean deletePontuacao(SQLiteDatabase db) {
         try {
-            db.execSQL("DELETE FROM " + NAME_TABLE + "WHERE " + ID_DIFIC + "=" + id_dificuldade + ";");
+            db.execSQL("DELETE FROM " + NAME_TABLE + "WHERE " + ID_PONT + "=" + id_pontuacao + ";");
             return true;
         } catch (SQLException ex) {
             db.close();
@@ -72,7 +72,7 @@ public class Pontuacao {
 
     public boolean updatePontuacao(SQLiteDatabase db) {
         try {
-            db.execSQL("UPDATE " + NAME_TABLE + "SET " + NOME_DIFIC + " = '" + dificuldade_name + "' WHERE " + ID_DIFIC + "=" + id_dificuldade + ";");
+            db.execSQL("UPDATE " + NAME_TABLE + "SET " + PONTUACAO + " = '" + pontuacao + "' WHERE " + ID_PONT + "=" + id_pontuacao + ";");
             return true;
         } catch (SQLException ex) {
             db.close();
@@ -80,16 +80,16 @@ public class Pontuacao {
         }
     }
 
-    public static Pontuacao getPontuacaoById(SQLiteDatabase db, int id_dificuldade) {
+    public static Pontuacao getPontuacaoById(SQLiteDatabase db, int id_pontuacao) {
         try {
-            Cursor c = db.rawQuery("SELECT * FROM " + NAME_TABLE + "WHERE " + ID_DIFIC + "=" + id_dificuldade + ";", null);
-            Dificuldade dificuldade = null;
+            Cursor c = db.rawQuery("SELECT * FROM " + NAME_TABLE + "WHERE " + ID_PONT + "=" + id_pontuacao + ";", null);
+            Pontuacao pontuacao = null;
 
             //se o cursor não estiver vazio e se estiver na primeira linha
             if (c != null && c.moveToFirst()) {
-                dificuldade = new Dificuldade(c.getInt(0), c.getString(1));
+                pontuacao = new Pontuacao(c.getInt(0), c.getString(1));
             }
-            return dificuldade;
+            return pontuacao;
 
         } catch (SQLException ex) {
             db.close();
