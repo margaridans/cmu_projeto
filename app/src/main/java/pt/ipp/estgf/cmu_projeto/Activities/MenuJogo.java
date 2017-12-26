@@ -18,7 +18,7 @@ public class MenuJogo extends AppCompatActivity implements View.OnClickListener{
         Button treino=(Button)findViewById(R.id.treino);
         treino.setOnClickListener(this);
         Button competitivo=(Button)findViewById(R.id.competitivo);
-        treino.setOnClickListener(this);
+        competitivo.setOnClickListener(this);
 
     }
     @Override
