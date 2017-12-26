@@ -9,13 +9,20 @@ import android.database.sqlite.SQLiteDatabase;
  */
 
 public class Dificuldade {
-    public static String NAME_TABLE = "tblDificuldade", ID_DIFIC = "id_dificuldade", NOME_DIFIC = "dificuldade_name";
+    public static String NAME_TABLE = "tblDificuldade", ID_DIFIC = "id_dificuldade", NOME_DIFIC = "dificuldade_name", PONTUACAO_PERG="pontuacao_perg" ;
     private int id_dificuldade;
     private String dificuldade_name;
+    private int pontuacao_perg;
 
-    public Dificuldade(int id_dificuldade, String dificuldade_name) {
+    public Dificuldade(int id_dificuldade, String dificuldade_name, int pontuacao_perg) {
         this.id_dificuldade = id_dificuldade;
         this.dificuldade_name = dificuldade_name;
+        this.pontuacao_perg = pontuacao_perg;
+    }
+
+    public Dificuldade(String dificuldade_name, int pontuacao_perg) {
+        this.dificuldade_name = dificuldade_name;
+        this.pontuacao_perg = pontuacao_perg;
     }
 
     public Dificuldade(String dificuldade_name) {
@@ -36,6 +43,14 @@ public class Dificuldade {
 
     public void setDificuldade_name(String dificuldade_name) {
         this.dificuldade_name = dificuldade_name;
+    }
+
+    public int getPontuacao_perg() {
+        return pontuacao_perg;
+    }
+
+    public void setPontuacao_perg(int pontuacao_perg) {
+        this.pontuacao_perg = pontuacao_perg;
     }
 
     public boolean addDificuldade(SQLiteDatabase db) {
@@ -75,7 +90,7 @@ public class Dificuldade {
 
             //se o cursor não estiver vazio e se estiver na primeira linha
             if (c != null && c.moveToFirst()) {
-                dificuldade = new Dificuldade(c.getInt(0), c.getString(1));
+                dificuldade = new Dificuldade(c.getInt(0), c.getString(1), c.getInt(2));
             }
             return dificuldade;
 
