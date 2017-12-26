@@ -23,7 +23,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginTop="80dp"
-        android:txt="" />
+        android:text="" />
 
     <Button
         android:id="@+id/resposta2"
@@ -32,7 +32,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginTop="10dp"
-        android:txt="" />
+        android:text="" />
 
     <Button
         android:id="@+id/resposta3"
@@ -41,7 +41,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginTop="10dp"
-        android:txt="" />
+        android:text="" />
 
     <Button
         android:id="@+id/resposta4"
@@ -50,7 +50,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginTop="10dp"
-        android:txt="" />
+        android:text="" />
 
 
     <TextView

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="pt.ipp.estgf.cmu_projeto.Activities.MenuJogo">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="pt.ipp.estgf.cmu_projeto.Activities.MenuJogo">
 
-    <Button
-        android:id="@+id/treino"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Treino" />
+<Button
+    android:id="@+id/treino"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Treino" />
 
-    <Button
-        android:id="@+id/competitivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Competitivo"
-        tools:layout_editor_absoluteY="127dp" />
+<Button
+    android:id="@+id/competitivo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Competitivo"
+    tools:layout_editor_absoluteY="127dp" />
 
 </LinearLayout>

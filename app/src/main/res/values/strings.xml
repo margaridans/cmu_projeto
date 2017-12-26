@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">cmu_projeto</string>
+    <string name="msg_perder">Perdeu</string>
+    <string name="msg_ganhou">Ganhou</string>
 </resources>

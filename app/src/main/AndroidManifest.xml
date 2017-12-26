@@ -19,7 +19,8 @@
         <activity android:name=".Activities.MenuJogo" />
         <activity android:name=".Activities.JogoTreino" />
         <activity android:name=".Activities.JogoCompetitivo" />
-        <activity android:name=".Fragments.Jogo"></activity>
+        <activity android:name=".Fragments.Jogo" />
+        <activity android:name=".Activities.FimJogo"></activity>
     </application>
 
 </manifest>

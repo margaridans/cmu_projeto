@@ -20,6 +20,10 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public MyDbHelper(Context context1, String databaseName, Context context, int databaseVersion) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+    public MyDbHelper( Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {

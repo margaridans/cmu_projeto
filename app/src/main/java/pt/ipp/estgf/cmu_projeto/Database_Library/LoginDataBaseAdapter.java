@@ -18,7 +18,7 @@ public class LoginDataBaseAdapter {
 
     public LoginDataBaseAdapter(Context _context) {
         context = _context;
-        dbHelper = new MyDbHelper(context, "KidsZone", null,1);
+        dbHelper = new MyDbHelper(context);
     }
 
     public LoginDataBaseAdapter open() throws SQLException {
