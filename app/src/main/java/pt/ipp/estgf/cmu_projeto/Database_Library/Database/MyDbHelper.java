@@ -21,7 +21,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE tblPergunta (id_pergunta INTEGER PRIMARY KEY, pergunta_name VARCHAR(100) NOT NULL,resposta1 VARCHAR(50)NOT NULL, resposta2 VARCHAR(50)NOT NULL," +
                 " resposta3 VARCHAR(50)NOT NULL, resposta4 VARCHAR(50)NOT NULL, resposta_certa VARCHAR(50)NOT NULL, id_categoria INTEGER REFERENCES tblCategoria,  " +
                 " id_dificuldade INTEGER REFERENCES tblDificuldade)");
-        db.execSQL("CREATE TABLE tblCategoria (id_categoria INTEGER PRIMARY KEY, categoria_name VARCHAR (25)NOT NULL)");
+        db.execSQL("CREATE TABLE tblCategoria (id_categoria INTEGER PRIMARY KEY AUTOINCREMENT, categoria_name VARCHAR (25)NOT NULL)");
         db.execSQL("CREATE TABLE tblDificuldade (id_dificuldade INTEGER PRIMARY KEY, dificuldade_name VARCHAR (25)NOT NULL)");
         db.execSQL("CREATE TABLE tblDicas (id_dica INTEGER PRIMARY KEY, dica_name VARCHAR (150)NOT NULL)");
         db.execSQL("CREATE TABLE tblPontuacao (id_pontuacao INTEGER PRIMARY KEY, pontuacao INTEGER, nome_user INTEGER REFERENCES tblUser)");
