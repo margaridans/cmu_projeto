@@ -12,7 +12,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "KidsZone";
     private static final int DATABASE_VERSION = 1;
 
-    public MyDbHelper(Context context) {
+    public MyDbHelper(Context context1, String databaseName, Context context, int databaseVersion) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
