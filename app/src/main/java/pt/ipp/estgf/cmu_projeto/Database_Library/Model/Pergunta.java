@@ -1,11 +1,17 @@
 package pt.ipp.estgf.cmu_projeto.Database_Library.Model;
 
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+
 /**
  * Created by Bernardino on 26/12/2017.
  */
 
 public class Pergunta {
-    public static String NAME_TABLE = "tblPergunta";
+    public static String NAME_TABLE = "tblPergunta", ID_PERG = "id_pergunta", NOME_PERG = "pergunta_nome",
+            ID_CAT = "id_categoria", ID_DIFIC = "id_dificuldade", RESP1 = "resposta1", RESP2 = "resposta2", RESP3 = "resposta3",
+            RESP4 = "resposta4", RESP_CERTA = "resposta_certa";
     private int id_pergunta;
     private String pergunta_name;
     private int id_categoria;
@@ -110,4 +116,53 @@ public class Pergunta {
     public void setResposta_certa(String resposta_certa) {
         this.resposta_certa = resposta_certa;
     }
+
+
+    public boolean addPergunta(SQLiteDatabase db) {
+        try {
+            db.execSQL("INSERT INTO " + NAME_TABLE + "(" + NOME_PERG + ")VALUES ('" + pergunta_name + "');");
+            return true;
+        } catch (SQLException ex) {
+            db.close();
+            return false;
+        }
+    }
+
+    public boolean deletePergunta(SQLiteDatabase db) {
+        try {
+            db.execSQL("DELETE FROM " + NAME_TABLE + "WHERE " + ID_PERG + "=" + id_pergunta + ";");
+            return true;
+        } catch (SQLException ex) {
+            db.close();
+            return false;
+        }
+    }
+
+    public boolean updatePergunta(SQLiteDatabase db) {
+        try {
+            db.execSQL("UPDATE " + NAME_TABLE + "SET " + NOME_PERG + " = '" + pergunta_name + "' WHERE " + ID_PERG + "=" + id_pergunta + ";");
+            return true;
+        } catch (SQLException ex) {
+            db.close();
+            return false;
+        }
+    }
+
+    public static Pergunta getPerguntaById(SQLiteDatabase db, int id_pergunta) {
+        try {
+            Cursor c = db.rawQuery("SELECT * FROM " + NAME_TABLE + "WHERE " + ID_PERG + "=" + id_pergunta + ";", null);
+            Pergunta pergunta = null;
+
+            //se o cursor não estiver vazio e se estiver na primeira linha
+            if (c != null && c.moveToFirst()) {
+                pergunta = new Pergunta(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8));
+            }
+            return pergunta;
+
+        } catch (SQLException ex) {
+            db.close();
+            return null;
+        }
+    }
+
 }
