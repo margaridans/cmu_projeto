@@ -14,12 +14,9 @@ import pt.ipp.estgf.cmu_projeto.Database_Library.Model.Pergunta;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "KidsZone";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
 
 
-    public MyDbHelper(Context context1, String databaseName, Context context, int databaseVersion) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
     public MyDbHelper( Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -28,12 +25,12 @@ public class MyDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE tblPergunta (id_pergunta INTEGER PRIMARY KEY AUTOINCREMENT, pergunta_name VARCHAR(100) NOT NULL,resposta1 VARCHAR(50)NOT NULL, resposta2 VARCHAR(50)NOT NULL," +
-                " resposta3 VARCHAR(50)NOT NULL, resposta4 VARCHAR(50)NOT NULL, resposta_certa VARCHAR(50)NOT NULL, id_categoria INTEGER REFERENCES tblCategoria,  " +
-                " id_dificuldade INTEGER REFERENCES tblDificuldade)");
+                " resposta3 VARCHAR(50)NOT NULL, resposta4 VARCHAR(50)NOT NULL, resposta_certa VARCHAR(50)NOT NULL, id_categoria,  " +
+                " id_dificuldade INTEGER)");
         db.execSQL("CREATE TABLE tblCategoria (id_categoria INTEGER PRIMARY KEY AUTOINCREMENT, categoria_name VARCHAR (25)NOT NULL)");
         db.execSQL("CREATE TABLE tblDificuldade (id_dificuldade INTEGER PRIMARY KEY AUTOINCREMENT, dificuldade_name VARCHAR (25)NOT NULL, pontuacao_perg INTEGER)");
         db.execSQL("CREATE TABLE tblDicas (id_dica INTEGER PRIMARY KEY AUTOINCREMENT, dica_name VARCHAR (150)NOT NULL)");
-        db.execSQL("CREATE TABLE tblPontuacao (id_pontuacao INTEGER PRIMARY KEY AUTOINCREMENT, pontuacao INTEGER, nome_user INTEGER REFERENCES tblUser)");
+        db.execSQL("CREATE TABLE tblPontuacao (id_pontuacao INTEGER PRIMARY KEY AUTOINCREMENT, pontuacao INTEGER, nome_user INTEGER)");
         db.execSQL("CREATE TABLE tblUser (id_user INTEGER PRIMARY KEY AUTOINCREMENT, nome_user VARCHAR (20) NOT NULL, pass_user VARCHAR (25)NOT NULL)");
 
     }

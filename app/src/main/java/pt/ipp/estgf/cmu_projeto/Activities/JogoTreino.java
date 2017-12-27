@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+
 
 import java.util.ArrayList;
 
@@ -21,7 +21,6 @@ import pt.ipp.estgf.cmu_projeto.R;
 
 public class JogoTreino extends AppCompatActivity {
     private ArrayList<Pergunta> listaPerguntas;
-    private int id_lista = 0;
     private PerguntasJogo jogo;
     private Dificuldade dificuldade;
     private TextView txtPergunta;
@@ -46,7 +45,7 @@ public class JogoTreino extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         Pergunta.getPerguntas(db, listaPerguntas);
-        pergunta = listaPerguntas.get(id_lista);
+
 
         setPerguntaToView();
 
