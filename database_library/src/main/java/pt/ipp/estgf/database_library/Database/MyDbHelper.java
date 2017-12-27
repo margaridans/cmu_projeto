@@ -33,7 +33,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE tblDicas (id_dica INTEGER PRIMARY KEY AUTOINCREMENT, dica_name VARCHAR (150)NOT NULL)");
         db.execSQL("CREATE TABLE tblPontuacao (id_pontuacao INTEGER PRIMARY KEY AUTOINCREMENT, pontuacao INTEGER, nome_user INTEGER)");
         db.execSQL("CREATE TABLE tblUser (id_user INTEGER PRIMARY KEY AUTOINCREMENT, nome_user VARCHAR (20) NOT NULL, pass_user VARCHAR (25)NOT NULL)");
-
+        createQuestions(db);
     }
 
     public void createQuestions(SQLiteDatabase db) {
