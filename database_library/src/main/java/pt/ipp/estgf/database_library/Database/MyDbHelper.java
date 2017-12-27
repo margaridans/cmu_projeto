@@ -5,8 +5,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import pt.ipp.estgf.database_library.Model.Categoria;
+import pt.ipp.estgf.database_library.Model.Dicas;
 import pt.ipp.estgf.database_library.Model.Dificuldade;
 import pt.ipp.estgf.database_library.Model.Pergunta;
+import pt.ipp.estgf.database_library.Model.Pontuacao;
+import pt.ipp.estgf.database_library.Model.User;
 
 
 /**
@@ -21,18 +24,18 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public MyDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
-
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE tblPergunta (id_pergunta INTEGER PRIMARY KEY AUTOINCREMENT, pergunta_name VARCHAR(100) NOT NULL,resposta1 VARCHAR(50)NOT NULL, resposta2 VARCHAR(50)NOT NULL," +
-                " resposta3 VARCHAR(50)NOT NULL, resposta4 VARCHAR(50)NOT NULL, resposta_certa VARCHAR(50)NOT NULL, id_categoria,  " +
-                " id_dificuldade INTEGER)");
-        db.execSQL("CREATE TABLE tblCategoria (id_categoria INTEGER PRIMARY KEY AUTOINCREMENT, categoria_name VARCHAR (25)NOT NULL)");
-        db.execSQL("CREATE TABLE tblDificuldade (id_dificuldade INTEGER PRIMARY KEY AUTOINCREMENT, dificuldade_name VARCHAR (25)NOT NULL, pontuacao_perg INTEGER)");
-        db.execSQL("CREATE TABLE tblDicas (id_dica INTEGER PRIMARY KEY AUTOINCREMENT, dica_name VARCHAR (150)NOT NULL)");
-        db.execSQL("CREATE TABLE tblPontuacao (id_pontuacao INTEGER PRIMARY KEY AUTOINCREMENT, pontuacao INTEGER, nome_user INTEGER)");
-        db.execSQL("CREATE TABLE tblUser (id_user INTEGER PRIMARY KEY AUTOINCREMENT, nome_user VARCHAR (20) NOT NULL, pass_user VARCHAR (25)NOT NULL)");
+        db.execSQL("CREATE TABLE " + Pergunta.NAME_TABLE + "(" + Pergunta.ID_PERG + "INTEGER PRIMARY KEY, " + Pergunta.NOME_PERG + "VARCHAR (150) NOT NULL, " + Pergunta.RESP1 + "VARCHAR (50), " +
+                Pergunta.RESP2 + "VARCHAR (50), " + Pergunta.RESP3 + "VARCHAR (50), " + Pergunta.RESP4 + "VARCHAR (50), " + Pergunta.RESP_CERTA + "VARCHAR (50), " + Categoria.ID_CAT + "INTEGER," +
+                Dificuldade.ID_DIFIC + "INTEGER");
+        db.execSQL("CREATE TABLE" + Categoria.NAME_TABLE + "(" + Categoria.ID_CAT + "INTEGER PRIMARY KEY, " + Categoria.NOME_CAT + "VARCHAR (25) NOT NULL");
+        db.execSQL("CREATE TABLE" + Dificuldade.NAME_TABLE + "(" + Dificuldade.ID_DIFIC + "INTEGER PRIMARY KEY, " + Dificuldade.NOME_DIFIC + "VARCHAR (25) NOT NULL, " +
+                Dificuldade.PONTUACAO_PERG + "INTEGER");
+        db.execSQL("CREATE TABLE" + Dicas.NAME_TABLE + "(" + Dicas.ID_DICAS + "INTEGER PRIMARY KEY, " + Dicas.NOME_DICA + "VARCHAR (150) NOT NULL");
+        db.execSQL("CREATE TABLE" + Pontuacao.NAME_TABLE + "(" + Pontuacao.ID_PONT + "INTEGER PRIMARY KEY, " + Pontuacao.PONTUACAO + "VARCHAR (150)," + User.USERNAME + "VARCHAR (25)");
+        db.execSQL("CREATE TABLE" + User.NAME_TABLE + "(" + User.ID_USER + "INTEGER PRIMARY KEY, " + User.USERNAME + "VARCHAR (25) NOT NULL," + User.PASS + "VARCHAR (25) NOT NULL");
+
         createQuestions(db);
     }
 
