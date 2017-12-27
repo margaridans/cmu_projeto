@@ -34,7 +34,7 @@ public class JogoTreino extends AppCompatActivity {
         setContentView(R.layout.activity_jogo);
 
         listaPerguntas = new ArrayList<>();
-        jogo = new PerguntasJogo(this, "Treino", -1);
+        jogo = new PerguntasJogo(this, -1);
 
         txtPergunta = (TextView) findViewById(R.id.pergunta);
         btn1 = (Button) findViewById(R.id.resposta1);

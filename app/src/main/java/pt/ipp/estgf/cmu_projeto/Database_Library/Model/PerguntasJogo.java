@@ -28,7 +28,7 @@ public class PerguntasJogo {
 
 
         Pergunta.getPerguntas(dbHelper.getReadableDatabase(), perguntasJogo);
-      
+
         perguntasJogadas = new LinkedList<>();
         respostas = new LinkedList<>();
 
