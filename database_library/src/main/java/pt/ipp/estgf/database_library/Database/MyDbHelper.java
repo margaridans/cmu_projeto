@@ -15,7 +15,7 @@ import pt.ipp.estgf.database_library.Model.Pergunta;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "KidsZone";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
 
 
     public MyDbHelper(Context context) {
@@ -38,12 +38,20 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
     public void createQuestions(SQLiteDatabase db) {
         Categoria categoria_ingles = new Categoria(0, "Inglês");
-        Categoria categorias_portugues = new Categoria(1, "Português");
-        Categoria categorias_matematica = new Categoria(2, "Matemática");
+        Categoria categoria_portugues = new Categoria(1, "Português");
+        Categoria categoria_matematica = new Categoria(2, "Matemática");
+
+        categoria_ingles.addCategoria(db);
+        categoria_portugues.addCategoria(db);
+        categoria_matematica.addCategoria(db);
 
         Dificuldade dificuldade_facil = new Dificuldade(0, "Fácil", 5);
         Dificuldade dificuldade_medio = new Dificuldade(1, "Médio", 10);
         Dificuldade dificuldade_dificil = new Dificuldade(2, "Díficil", 15);
+
+        dificuldade_facil.addDificuldade(db);
+        dificuldade_medio.addDificuldade(db);
+        dificuldade_dificil.addDificuldade(db);
 
 
         Pergunta pergunta1 = new Pergunta(0, "Qual o plural de batata?", 0, 0, "Tomatos", "Potatos", "Apples", "Potatoes", "Potatoes");
