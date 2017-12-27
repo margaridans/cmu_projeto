@@ -24,11 +24,16 @@ public class PerguntasJogo {
         this.context=context;
         dbHelper=new MyDbHelper(context);
         perguntasJogo=new ArrayList<>();
+        perguntasJogadas= new LinkedList<>();
 
 
         if(tipoJogo.equals("Treino")) {
             Pergunta.getPerguntas(dbHelper.getReadableDatabase(),perguntasJogo);
         }
+        perguntasJogadas= new LinkedList<>();
+        respostas= new LinkedList<>();
+
+        this.posicaoUltimaPergunta = -1;
     }
 
 

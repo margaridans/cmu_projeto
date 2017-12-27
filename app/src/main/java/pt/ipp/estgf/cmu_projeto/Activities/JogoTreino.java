@@ -21,7 +21,7 @@ import pt.ipp.estgf.cmu_projeto.R;
 
 public class JogoTreino extends AppCompatActivity {
     private ArrayList<Pergunta> listaPerguntas;
-    private int id_lista=0;
+    private int id_lista = 0;
     private PerguntasJogo jogo;
     private Dificuldade dificuldade;
     private TextView txtPergunta;
@@ -42,11 +42,13 @@ public class JogoTreino extends AppCompatActivity {
         btn3 = (Button) findViewById(R.id.resposta3);
         btn4 = (Button) findViewById(R.id.resposta4);
 
-        MyDbHelper dbHelper= new MyDbHelper(this);
-        SQLiteDatabase db= dbHelper.getWritableDatabase();
+        MyDbHelper dbHelper = new MyDbHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        Pergunta.getPerguntas(db,listaPerguntas);
-        pergunta=listaPerguntas.get(id_lista);
+        Pergunta.getPerguntas(db, listaPerguntas);
+        pergunta = listaPerguntas.get(id_lista);
+
+        setPerguntaToView();
 
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -71,14 +73,24 @@ public class JogoTreino extends AppCompatActivity {
     }
 
     private void verificaResposta(String resposta, Dificuldade dificuldade) {
-        if(jogo.respostaCerta(resposta)) {
-           Toast.makeText(this, "Ganhou",Toast.LENGTH_LONG).show();
-
+        if (jogo.respostaCerta(resposta)) {
+            Toast.makeText(this, "Ganhou", Toast.LENGTH_LONG).show();
+            setPerguntaToView();
         } else {
-            Intent intent= new Intent(this, FimJogo.class);
-           startActivity(intent);
+            Intent intent = new Intent(this, FimJogo.class);
+            startActivity(intent);
         }
     }
 
+    private void setPerguntaToView() {
+        pergunta = jogo.getNextPergunta();
+
+        txtPergunta.setText(pergunta.getPergunta_name());
+        btn1.setText(pergunta.getResposta1());
+        btn2.setText(pergunta.getResposta2());
+        btn3.setText(pergunta.getResposta3());
+        btn4.setText(pergunta.getResposta4());
     }
+
+}
 
