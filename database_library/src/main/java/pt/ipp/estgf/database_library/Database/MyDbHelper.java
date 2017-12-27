@@ -1,12 +1,13 @@
-package pt.ipp.estgf.cmu_projeto.Database_Library.Database;
+package pt.ipp.estgf.database_library.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import pt.ipp.estgf.cmu_projeto.Database_Library.Model.Categoria;
-import pt.ipp.estgf.cmu_projeto.Database_Library.Model.Dificuldade;
-import pt.ipp.estgf.cmu_projeto.Database_Library.Model.Pergunta;
+import pt.ipp.estgf.database_library.Model.Categoria;
+import pt.ipp.estgf.database_library.Model.Dificuldade;
+import pt.ipp.estgf.database_library.Model.Pergunta;
+
 
 /**
  * Created by Bernardino on 26/12/2017.

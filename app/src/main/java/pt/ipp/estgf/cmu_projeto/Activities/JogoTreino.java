@@ -2,22 +2,21 @@ package pt.ipp.estgf.cmu_projeto.Activities;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
 import java.util.ArrayList;
 
-import pt.ipp.estgf.cmu_projeto.Database_Library.Database.MyDbHelper;
-import pt.ipp.estgf.cmu_projeto.Database_Library.Model.Dificuldade;
-import pt.ipp.estgf.cmu_projeto.Database_Library.Model.Pergunta;
-import pt.ipp.estgf.cmu_projeto.Database_Library.Model.PerguntasJogo;
+import pt.ipp.estgf.cmu_projeto.Activities.Model.PerguntasJogo;
 import pt.ipp.estgf.cmu_projeto.R;
+import pt.ipp.estgf.database_library.Database.MyDbHelper;
+import pt.ipp.estgf.database_library.Model.Dificuldade;
+import pt.ipp.estgf.database_library.Model.Pergunta;
+
 
 public class JogoTreino extends AppCompatActivity {
     private ArrayList<Pergunta> listaPerguntas;

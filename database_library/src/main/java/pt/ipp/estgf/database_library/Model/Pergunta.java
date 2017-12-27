@@ -1,5 +1,4 @@
-package pt.ipp.estgf.cmu_projeto.Database_Library.Model;
-
+package pt.ipp.estgf.database_library.Model;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
