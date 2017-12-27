@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cmu_projeto.iml" filepath="$PROJECT_DIR$/cmu_projeto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/database_library/database_library.iml" filepath="$PROJECT_DIR$/database_library/database_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databaselibrary/databaselibrary.iml" filepath="$PROJECT_DIR$/databaselibrary/databaselibrary.iml" />
     </modules>
   </component>
 </project>
