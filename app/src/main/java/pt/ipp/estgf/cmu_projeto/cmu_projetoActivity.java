@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import pt.ipp.estgf.cmu_projeto.Database_Library.LoginDataBaseAdapter;
 import pt.ipp.estgf.cmu_projeto.Database_Library.SignUPActivity;
-import pt.ipp.estgf.cmu_projeto.R;
 
 public class cmu_projetoActivity extends AppCompatActivity {
 
