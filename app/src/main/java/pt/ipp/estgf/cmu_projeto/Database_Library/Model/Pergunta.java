@@ -4,6 +4,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 /**
  * Created by Bernardino on 26/12/2017.
  */
@@ -159,6 +161,22 @@ public class Pergunta {
             }
             return pergunta;
 
+        } catch (SQLException ex) {
+            db.close();
+            return null;
+        }
+    }
+
+    public static ArrayList<Pergunta> getPerguntas(SQLiteDatabase db, ArrayList<Pergunta> perguntasList) {
+        try {
+            Cursor c = db.rawQuery("SELECT * FROM " + NAME_TABLE, null);
+
+            if (c != null && c.moveToFirst()) {
+                do {
+                    perguntasList.add(new Pergunta(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8)));
+                } while (c.moveToNext());
+            }
+            return perguntasList;
         } catch (SQLException ex) {
             db.close();
             return null;
