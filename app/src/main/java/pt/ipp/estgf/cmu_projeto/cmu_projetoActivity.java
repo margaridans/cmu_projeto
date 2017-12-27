@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import pt.ipp.estgf.cmu_projeto.Database_Library.LoginDataBaseAdapter;
 import pt.ipp.estgf.cmu_projeto.Database_Library.SignUPActivity;
+import pt.ipp.estgf.cmu_projeto.R;
 
 public class cmu_projetoActivity extends AppCompatActivity {
 
@@ -20,13 +22,13 @@ public class cmu_projetoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity);
+        setContentView(R.layout.activity_cmu_projeto);
 
         loginDataBaseAdapter = new LoginDataBaseAdapter(this);
         loginDataBaseAdapter = loginDataBaseAdapter.open();
 
         btnSignIn = (Button) findViewById(R.id.buttonSignIN);
-        btnSignUp = (Button) findViewById(R.id.buttonSignUP);
+        //btnSignUp = (Button) findViewById(R.id.buttonSignUP);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

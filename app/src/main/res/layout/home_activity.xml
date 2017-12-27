@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="244dp"
+        android:layout_marginTop="-90dp"
+        app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/buttonSignIN"
+        android:layout_width="wrap_content"
+        android:layout_height="79dp"
+        android:background="@drawable/login"
+        android:onClick="signIn"
         android:text="Login"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:onClick="signIn" />
-
-    <Button
-        android:id="@+id/buttonSignUP"
-        android:text="Registo"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        android:textSize="18sp"
+        android:typeface="sans" />
 
     <Button
         android:id="@+id/btnJogar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="67dp"
+        android:background="@drawable/game"
+        android:lineSpacingExtra="30sp"
         android:onClick="btnJogarOnClick"
-        android:text="Jogar">
-
-    </Button>
+        android:text="Jogar"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:typeface="sans"></Button>
 
 </LinearLayout>
