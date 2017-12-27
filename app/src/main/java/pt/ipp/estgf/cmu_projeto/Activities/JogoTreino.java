@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -22,9 +23,8 @@ public class JogoTreino extends AppCompatActivity {
     private ArrayList<Pergunta> listaPerguntas;
     private int id_lista=0;
     private PerguntasJogo jogo;
-    private float pontuacao=0;
     private Dificuldade dificuldade;
-    private TextView txtPergunta, txtPontuacao;
+    private TextView txtPergunta;
     private Button btn1, btn2, btn3, btn4;
     private Pergunta pergunta;
 
@@ -34,15 +34,13 @@ public class JogoTreino extends AppCompatActivity {
         setContentView(R.layout.activity_jogo);
 
         listaPerguntas = new ArrayList<>();
-        jogo = new PerguntasJogo(this, "Competitivo", -1);
+        jogo = new PerguntasJogo(this, "Treino", -1);
 
         txtPergunta = (TextView) findViewById(R.id.pergunta);
         btn1 = (Button) findViewById(R.id.resposta1);
         btn2 = (Button) findViewById(R.id.resposta2);
         btn3 = (Button) findViewById(R.id.resposta3);
         btn4 = (Button) findViewById(R.id.resposta4);
-
-        txtPontuacao=(TextView)findViewById(R.id.pontuacao);
 
         MyDbHelper dbHelper= new MyDbHelper(this);
         SQLiteDatabase db= dbHelper.getWritableDatabase();
@@ -74,14 +72,13 @@ public class JogoTreino extends AppCompatActivity {
 
     private void verificaResposta(String resposta, Dificuldade dificuldade) {
         if(jogo.respostaCerta(resposta)) {
-            txtPontuacao.setText("Pontos: " + pontuacao);
+           Toast.makeText(this, "Ganhou",Toast.LENGTH_LONG).show();
 
         } else {
             Intent intent= new Intent(this, FimJogo.class);
            startActivity(intent);
         }
     }
-
 
     }
 
