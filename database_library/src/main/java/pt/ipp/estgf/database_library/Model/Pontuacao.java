@@ -85,6 +85,7 @@ public class Pontuacao {
             if (c != null && c.moveToFirst()) {
                 pontuacao = new Pontuacao(c.getInt(0), c.getString(1));
             }
+
             return pontuacao;
 
         } catch (SQLException ex) {

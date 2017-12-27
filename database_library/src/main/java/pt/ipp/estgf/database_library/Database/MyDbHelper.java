@@ -22,15 +22,16 @@ public class MyDbHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + Pergunta.NAME_TABLE + "(" + Pergunta.ID_PERG + "INTEGER PRIMARY KEY, " + Pergunta.NOME_PERG + "VARCHAR (150) NOT NULL, " + Pergunta.RESP1 + "VARCHAR (50) NOT NULL, " +
-                Pergunta.RESP2 + "VARCHAR (50) NOT NULL, " + Pergunta.RESP3 + "VARCHAR (50) NOT NULL, " + Pergunta.RESP4 + "VARCHAR (50) NOT NULL, " + Pergunta.RESP_CERTA + "VARCHAR (50) NOT NULL, " +
-                Pergunta.ID_CAT + "INTEGER NOT NULL," + Pergunta.ID_DIFIC + "INTEGER NOT NULL);");
-        db.execSQL("CREATE TABLE" + Categoria.NAME_TABLE + "(" + Categoria.ID_CAT + "INTEGER PRIMARY KEY, " + Categoria.NOME_CAT + "VARCHAR (25) NOT NULL);");
-        db.execSQL("CREATE TABLE" + Dificuldade.NAME_TABLE + "(" + Dificuldade.ID_DIFIC + "INTEGER PRIMARY KEY, " + Dificuldade.NOME_DIFIC + "VARCHAR (25) NOT NULL, " +
-                Dificuldade.PONTUACAO_PERG + "INTEGER);");
-        db.execSQL("CREATE TABLE" + Dicas.NAME_TABLE + "(" + Dicas.ID_DICAS + "INTEGER PRIMARY KEY, " + Dicas.NOME_DICA + "VARCHAR (150) NOT NULL);");
-        db.execSQL("CREATE TABLE" + Pontuacao.NAME_TABLE + "(" + Pontuacao.ID_PONT + "INTEGER PRIMARY KEY, " + Pontuacao.PONTUACAO + "VARCHAR (150)," + Pontuacao.USER + "VARCHAR (25));");
-        db.execSQL("CREATE TABLE" + User.NAME_TABLE + "(" + User.ID_USER + "INTEGER PRIMARY KEY, " + User.USERNAME + "VARCHAR (25) NOT NULL," + User.PASS + "VARCHAR (25) NOT NULL);");
+        db.execSQL("CREATE TABLE " + Pergunta.NAME_TABLE + "(" + Pergunta.ID_PERG + " INTEGER PRIMARY KEY , " + Pergunta.NOME_PERG + " VARCHAR (150) NOT NULL , " + Pergunta.RESP1 + " VARCHAR (50) NOT NULL, " +
+                Pergunta.RESP2 + " VARCHAR (50) NOT NULL, " + Pergunta.RESP3 + " VARCHAR (50) NOT NULL, " + Pergunta.RESP4 + " VARCHAR (50) NOT NULL, " + Pergunta.RESP_CERTA + " VARCHAR (50) NOT NULL, " +
+                Pergunta.ID_CAT + " INTEGER NOT NULL, " + Pergunta.ID_DIFIC + " INTEGER NOT NULL );");
+
+        db.execSQL("CREATE TABLE " + Categoria.NAME_TABLE + "(" + Categoria.ID_CAT + " INTEGER PRIMARY KEY, " + Categoria.NOME_CAT + " VARCHAR (25) NOT NULL );");
+        db.execSQL("CREATE TABLE " + Dificuldade.NAME_TABLE + "(" + Dificuldade.ID_DIFIC + " INTEGER PRIMARY KEY, " + Dificuldade.NOME_DIFIC + " VARCHAR (25) NOT NULL, " +
+                Dificuldade.PONTUACAO_PERG + "INTEGER );");
+        db.execSQL("CREATE TABLE " + Dicas.NAME_TABLE + "(" + Dicas.ID_DICAS + " INTEGER PRIMARY KEY, " + Dicas.NOME_DICA + " VARCHAR (150) NOT NULL);");
+        db.execSQL("CREATE TABLE " + Pontuacao.NAME_TABLE + "(" + Pontuacao.ID_PONT + " INTEGER PRIMARY KEY, " + Pontuacao.PONTUACAO + " VARCHAR (150)," + Pontuacao.USER + " VARCHAR (25) );");
+        db.execSQL("CREATE TABLE " + User.NAME_TABLE + "(" + User.ID_USER + " INTEGER PRIMARY KEY, " + User.USERNAME + " VARCHAR (25) NOT NULL," + User.PASS + " VARCHAR (25) NOT NULL );");
 
         createQuestions(db);
     }

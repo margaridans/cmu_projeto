@@ -88,6 +88,7 @@ public class Dificuldade {
             if (c != null && c.moveToFirst()) {
                 dificuldade = new Dificuldade(c.getInt(0), c.getString(1), c.getInt(2));
             }
+
             return dificuldade;
 
         } catch (SQLException ex) {

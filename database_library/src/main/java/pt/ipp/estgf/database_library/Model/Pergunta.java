@@ -172,6 +172,7 @@ public class Pergunta {
                     perguntasList.add(new Pergunta(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getString(4), c.getString(5), c.getString(6), c.getString(7), c.getString(8)));
                 } while (c.moveToNext());
             }
+
             return perguntasList;
         } catch (SQLException ex) {
             db.close();

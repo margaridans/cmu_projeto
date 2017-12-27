@@ -75,6 +75,7 @@ public class Dicas {
             if (c != null && c.moveToFirst()) {
                 dica = new Dicas(c.getInt(0), c.getString(1));
             }
+
             return dica;
         } catch (SQLException ex) {
             db.close();

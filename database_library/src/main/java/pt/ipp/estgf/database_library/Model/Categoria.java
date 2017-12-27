@@ -75,6 +75,7 @@ public class Categoria {
             if (c != null && c.moveToFirst()) {
                 categoria = new Categoria(c.getInt(0), c.getString(1));
             }
+
             return categoria;
 
         } catch (SQLException ex) {
