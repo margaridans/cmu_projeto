@@ -29,7 +29,7 @@ public class Pontuacao {
         return id_pontuacao;
     }
 
-    public void setId_pontuacao(int id_pontuacao) {
+    public void setId_pontuamcao(int id_pontuacao) {
         this.id_pontuacao = id_pontuacao;
     }
 

@@ -7,7 +7,7 @@
     tools:context="pt.ipp.estgf.cmu_projeto.Fragments.Jogo">
 
     <TextView
-        android:id="@+id/pergunta"
+        android:id="@+id/txtPergunta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
