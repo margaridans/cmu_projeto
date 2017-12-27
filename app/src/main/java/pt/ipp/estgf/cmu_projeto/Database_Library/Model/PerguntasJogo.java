@@ -65,6 +65,7 @@ public class PerguntasJogo {
         return randomNum;
     }
 
+    /*
     public String positionResposta(int tamMaximo) {
         Random random = new Random();
         int randomNum = -1;
@@ -85,7 +86,7 @@ public class PerguntasJogo {
         } else {
             return "";
         }
-    }
+    }*/
 
 
 }

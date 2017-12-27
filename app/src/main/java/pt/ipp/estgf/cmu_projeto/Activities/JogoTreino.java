@@ -51,23 +51,27 @@ public class JogoTreino extends AppCompatActivity {
         setPerguntaToView();
 
         btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 verificaResposta(btn1.getText().toString(), dificuldade);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 verificaResposta(btn2.getText().toString(), dificuldade);
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 verificaResposta(btn3.getText().toString(), dificuldade);
             }
         });
-        btn3.setOnClickListener(new View.OnClickListener() {
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
-                verificaResposta(btn3.getText().toString(), dificuldade);
+                verificaResposta(btn4.getText().toString(), dificuldade);
             }
         });
     }
