@@ -4,10 +4,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by Bernardino on 26/12/2017.
- */
-
 public class Dificuldade {
     public static String NAME_TABLE = "tblDificuldade", ID_DIFIC = "id_dificuldade", NOME_DIFIC = "dificuldade_name", PONTUACAO_PERG="pontuacao_perg" ;
     private int id_dificuldade;

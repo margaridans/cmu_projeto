@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import pt.ipp.estgf.cmu_projeto.R;
-import pt.ipp.estgf.cmu_projeto.cmu_projetoActivity;
 
 public class SignUPActivity extends Activity {
     EditText editTextUserName, editTextPassword, editTextConfirmPassword;
@@ -24,11 +23,11 @@ public class SignUPActivity extends Activity {
         setContentView(R.layout.sinup);
         loginDataBaseAdapter = new LoginDataBaseAdapter(this);
         loginDataBaseAdapter = loginDataBaseAdapter.open();
-        editTextUserName = (EditText) findViewById(R.id.editTextUserName);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        editTextConfirmPassword = (EditText) findViewById(R.id.editTextConfirmPassword);
+        editTextUserName = findViewById(R.id.editTextUserName);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
 
-        btnCreateAccount = (Button) findViewById(R.id.buttonCreateAccount);
+        btnCreateAccount = findViewById(R.id.buttonCreateAccount);
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -48,7 +47,6 @@ public class SignUPActivity extends Activity {
                     Toast.makeText(getApplicationContext(),
                             "Password does not match", Toast.LENGTH_LONG)
                             .show();
-                    return;
                 } else {
 
                     loginDataBaseAdapter.insertEntry(nome_user, pass_user);

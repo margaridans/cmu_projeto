@@ -4,10 +4,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by Bernardino on 26/12/2017.
- */
-
 public class Pontuacao {
     public static String NAME_TABLE = "tblPontuacao", ID_PONT="id_pontuacao", PONTUACAO="pontuacao", USER="nome_user";
     private int id_pontuacao;

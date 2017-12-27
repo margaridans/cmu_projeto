@@ -34,11 +34,11 @@ public class JogoTreino extends AppCompatActivity {
         listaPerguntas = new ArrayList<>();
         jogo = new PerguntasJogo(this, -1);
 
-        txtPergunta = (TextView) findViewById(R.id.txtPergunta);
-        btn1 = (Button) findViewById(R.id.resposta1);
-        btn2 = (Button) findViewById(R.id.resposta2);
-        btn3 = (Button) findViewById(R.id.resposta3);
-        btn4 = (Button) findViewById(R.id.resposta4);
+        txtPergunta = findViewById(R.id.txtPergunta);
+        btn1 = findViewById(R.id.resposta1);
+        btn2 = findViewById(R.id.resposta2);
+        btn3 = findViewById(R.id.resposta3);
+        btn4 = findViewById(R.id.resposta4);
 
         MyDbHelper dbHelper = new MyDbHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();

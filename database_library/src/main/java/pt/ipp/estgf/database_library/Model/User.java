@@ -1,8 +1,5 @@
 package pt.ipp.estgf.database_library.Model;
 
-/**
- * Created by Bernardino on 27/12/2017.
- */
 
 public class User {
     public static String NAME_TABLE = "tblUser", ID_USER = "id_user", USERNAME = "username", PASS = "password";

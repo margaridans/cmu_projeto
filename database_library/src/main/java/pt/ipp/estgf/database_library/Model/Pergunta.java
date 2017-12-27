@@ -5,9 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
-/**
- * Created by Bernardino on 26/12/2017.
- */
 
 public class Pergunta {
     public static String NAME_TABLE = "tblPergunta", ID_PERG = "id_pergunta", NOME_PERG = "pergunta_nome",

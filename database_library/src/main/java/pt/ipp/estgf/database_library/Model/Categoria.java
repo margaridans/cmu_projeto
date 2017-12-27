@@ -4,9 +4,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by Bernardino on 26/12/2017.
- */
 
 public class Categoria {
     public static String NAME_TABLE = "tblCategoria", NOME_CAT = "categoria_name", ID_CAT = "id_categoria";

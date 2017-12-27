@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pt.ipp.estgf.database_library"/>
+<manifest package="pt.ipp.estgf.database_library"/>

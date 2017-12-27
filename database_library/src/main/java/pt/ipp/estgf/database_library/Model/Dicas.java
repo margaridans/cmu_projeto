@@ -5,18 +5,13 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 
-
-/**
- * Created by Bernardino on 26/12/2017.
- */
-
 public class Dicas {
 
     public static String NAME_TABLE = "tblDicas", ID_DICAS = "id_dica", NOME_DICA = "dica_name";
     private int id_dica;
     private String dica_name;
 
-    public Dicas(int id_dica, String dica_name) {
+    public  Dicas(int id_dica, String dica_name) {
         this.id_dica = id_dica;
         this.dica_name = dica_name;
     }

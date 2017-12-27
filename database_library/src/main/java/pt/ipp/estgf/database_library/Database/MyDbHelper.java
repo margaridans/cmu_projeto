@@ -12,10 +12,6 @@ import pt.ipp.estgf.database_library.Model.Pontuacao;
 import pt.ipp.estgf.database_library.Model.User;
 
 
-/**
- * Created by Bernardino on 26/12/2017.
- */
-
 public class MyDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "KidsZone";
     private static final int DATABASE_VERSION = 10;
