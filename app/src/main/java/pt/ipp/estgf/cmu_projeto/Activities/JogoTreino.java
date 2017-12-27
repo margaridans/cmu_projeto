@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import pt.ipp.estgf.cmu_projeto.Activities.Model.PerguntasJogo;
+import pt.ipp.estgf.cmu_projeto.Model.PerguntasJogo;
 import pt.ipp.estgf.cmu_projeto.R;
 import pt.ipp.estgf.database_library.Database.MyDbHelper;
 import pt.ipp.estgf.database_library.Model.Dificuldade;

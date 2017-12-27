@@ -33,7 +33,6 @@
         android:layout_height="76dp"
         android:background="@drawable/game"
         android:lineSpacingExtra="30sp"
-        android:onClick="btnJogarOnClick"
         android:text="Jogar"
         android:textAlignment="center"
         android:textAllCaps="false"
