@@ -20,38 +20,37 @@ public class PerguntasJogo {
     private MyDbHelper dbHelper;
     private int posicaoUltimaPergunta;
 
-    public PerguntasJogo(Context context, String tipoJogo, int opcao) {
-        this.context=context;
-        dbHelper=new MyDbHelper(context);
-        perguntasJogo=new ArrayList<>();
-        perguntasJogadas= new LinkedList<>();
+    public PerguntasJogo(Context context, int opcao) {
+        this.context = context;
+        dbHelper = new MyDbHelper(context);
+        perguntasJogo = new ArrayList<>();
+        perguntasJogadas = new LinkedList<>();
 
 
-        if(tipoJogo.equals("Treino")) {
-            Pergunta.getPerguntas(dbHelper.getReadableDatabase(),perguntasJogo);
-        }
-        perguntasJogadas= new LinkedList<>();
-        respostas= new LinkedList<>();
+        Pergunta.getPerguntas(dbHelper.getReadableDatabase(), perguntasJogo);
+      
+        perguntasJogadas = new LinkedList<>();
+        respostas = new LinkedList<>();
 
         this.posicaoUltimaPergunta = -1;
     }
 
 
-    public boolean respostaCerta (String resposta) {
-        if(posicaoUltimaPergunta>-1) {
+    public boolean respostaCerta(String resposta) {
+        if (posicaoUltimaPergunta > -1) {
             return perguntasJogo.get(posicaoUltimaPergunta).getResposta_certa().equals(resposta);
         }
         return false;
     }
 
     public Pergunta getNextPergunta() {
-        if(perguntasJogo.size()==perguntasJogadas.size()) {
+        if (perguntasJogo.size() == perguntasJogadas.size()) {
             return null;
         }
 
-        int randomNum=positionPergunta((perguntasJogo.size()));
+        int randomNum = positionPergunta((perguntasJogo.size()));
         perguntasJogadas.add(randomNum);
-        posicaoUltimaPergunta=randomNum;
+        posicaoUltimaPergunta = randomNum;
 
         return perguntasJogo.get(randomNum);
     }
@@ -61,27 +60,27 @@ public class PerguntasJogo {
         int randomNum = -1;
 
         do {
-            randomNum=random.nextInt(tamMaximo);
-        } while(perguntasJogadas.contains(randomNum));
+            randomNum = random.nextInt(tamMaximo);
+        } while (perguntasJogadas.contains(randomNum));
         return randomNum;
     }
 
-    public String positionResposta (int tamMaximo) {
+    public String positionResposta(int tamMaximo) {
         Random random = new Random();
         int randomNum = -1;
 
         do {
-            randomNum=random.nextInt(tamMaximo+1);
-        } while(respostas.contains(randomNum) || randomNum == 0);
+            randomNum = random.nextInt(tamMaximo + 1);
+        } while (respostas.contains(randomNum) || randomNum == 0);
         respostas.add(randomNum);
 
-        if(randomNum==1) {
+        if (randomNum == 1) {
             return perguntasJogo.get(posicaoUltimaPergunta).getResposta1();
-        } else if(randomNum == 2) {
+        } else if (randomNum == 2) {
             return perguntasJogo.get(posicaoUltimaPergunta).getResposta2();
-        } else if(randomNum == 3) {
+        } else if (randomNum == 3) {
             return perguntasJogo.get(posicaoUltimaPergunta).getResposta3();
-        } else if(randomNum == 4) {
+        } else if (randomNum == 4) {
             return perguntasJogo.get(posicaoUltimaPergunta).getResposta_certa();
         } else {
             return "";
