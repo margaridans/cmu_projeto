@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:background="@drawable/background">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -22,19 +23,32 @@
         android:background="@drawable/login"
         android:onClick="signIn"
         android:text="Login"
+        android:textAllCaps="false"
         android:textSize="18sp"
         android:typeface="sans" />
 
     <Button
         android:id="@+id/btnJogar"
         android:layout_width="wrap_content"
-        android:layout_height="67dp"
+        android:layout_height="76dp"
         android:background="@drawable/game"
         android:lineSpacingExtra="30sp"
         android:onClick="btnJogarOnClick"
         android:text="Jogar"
         android:textAlignment="center"
+        android:textAllCaps="false"
         android:textSize="18sp"
-        android:typeface="sans"></Button>
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/btnDicas"
+        android:layout_width="wrap_content"
+        android:layout_height="79dp"
+        android:background="@drawable/tips"
+        android:text="Dicas"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:typeface="sans" />
 
 </LinearLayout>
