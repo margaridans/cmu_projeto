@@ -19,19 +19,17 @@ import pt.ipp.estgf.database_library.Model.Pergunta;
 
 
 public class JogoTreino extends AppCompatActivity {
-    private ArrayList<Pergunta> listaPerguntas;
     private PerguntasJogo jogo;
     private Dificuldade dificuldade;
     private TextView txtPergunta;
     private Button btn1, btn2, btn3, btn4;
-    private Pergunta pergunta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogo);
 
-        listaPerguntas = new ArrayList<>();
+        ArrayList<Pergunta> listaPerguntas = new ArrayList<>();
         jogo = new PerguntasJogo(this, -1);
 
         txtPergunta = findViewById(R.id.txtPergunta);
@@ -85,7 +83,7 @@ public class JogoTreino extends AppCompatActivity {
     }
 
     private void setPerguntaToView() {
-        pergunta = jogo.getNextPergunta();
+        Pergunta pergunta = jogo.getNextPergunta();
 
         txtPergunta.setText(pergunta.getPergunta_name());
         btn1.setText(pergunta.getResposta1());
