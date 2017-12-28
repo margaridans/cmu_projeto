@@ -9,10 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import pt.ipp.estgf.cmu_projeto.Activities.MainActivity;
+import pt.ipp.estgf.cmu_projeto.MainActivity;
 import pt.ipp.estgf.cmu_projeto.R;
 
-public class SignUPActivity extends Activity {
+public class Registo extends Activity {
     EditText editTextUserName, editTextPassword, editTextConfirmPassword;
     Button btnCreateAccount;
     Context context = this;
@@ -21,7 +21,7 @@ public class SignUPActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sinup);
+        setContentView(R.layout.registo);
         login = new Login(this);
         login = login.open();
         editTextUserName = findViewById(R.id.editTextUserName);
@@ -54,7 +54,7 @@ public class SignUPActivity extends Activity {
                     Toast.makeText(getApplicationContext(),
                             "Account Successfully Created ", Toast.LENGTH_LONG)
                             .show();
-                    Intent i = new Intent(SignUPActivity.this,
+                    Intent i = new Intent(Registo.this,
                             MainActivity.class);
                     startActivity(i);
                     finish();

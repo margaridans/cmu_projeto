@@ -21,7 +21,7 @@
         <activity android:name=".Activities.Jogo.JogoCompetitivo" />
         <activity android:name=".Fragments.Jogo" />
         <activity android:name=".Activities.Jogo.FimJogo"></activity>
-        <activity android:name=".Activities.MainActivity" />
+        <activity android:name="layout.MainActivity" />
     </application>
 
 </manifest>

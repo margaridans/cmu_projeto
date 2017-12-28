@@ -1,4 +1,4 @@
-package pt.ipp.estgf.cmu_projeto.Activities;
+package pt.ipp.estgf.cmu_projeto;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -10,8 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.Login;
-import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.SignUPActivity;
-import pt.ipp.estgf.cmu_projeto.R;
+import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.Registo;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intentSignUP = new Intent(getApplicationContext(),
-                        SignUPActivity.class);
+                        Registo.class);
                 startActivity(intentSignUP);
             }
         });
