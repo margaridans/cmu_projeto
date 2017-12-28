@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.MenuJogo">
+        <activity android:name=".Activities.Jogo.MenuJogo">
         <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,11 +17,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activities.JogoTreino" />
-        <activity android:name=".Activities.JogoCompetitivo" />
+        <activity android:name=".Activities.Jogo.JogoTreino" />
+        <activity android:name=".Activities.Jogo.JogoCompetitivo" />
         <activity android:name=".Fragments.Jogo" />
-        <activity android:name=".Activities.FimJogo"></activity>
-        <activity android:name=".Activities.cmu_projetoActivity" />
+        <activity android:name=".Activities.Jogo.FimJogo"></activity>
+        <activity android:name=".Activities.MainActivity" />
     </application>
 
 </manifest>

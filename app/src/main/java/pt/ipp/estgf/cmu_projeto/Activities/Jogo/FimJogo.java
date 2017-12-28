@@ -1,4 +1,4 @@
-package pt.ipp.estgf.cmu_projeto.Activities;
+package pt.ipp.estgf.cmu_projeto.Activities.Jogo;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

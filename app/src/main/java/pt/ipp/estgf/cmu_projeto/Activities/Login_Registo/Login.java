@@ -1,4 +1,4 @@
-package pt.ipp.estgf.cmu_projeto.Activities;
+package pt.ipp.estgf.cmu_projeto.Activities.Login_Registo;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,19 +9,19 @@ import android.database.sqlite.SQLiteDatabase;
 import pt.ipp.estgf.database_library.Database.MyDbHelper;
 
 
-public class LoginDataBaseAdapter {
+public class Login {
 
 
     public SQLiteDatabase db;
     private final Context context;
     private MyDbHelper dbHelper;
 
-    public LoginDataBaseAdapter(Context _context) {
+    public Login(Context _context) {
         context = _context;
         dbHelper = new MyDbHelper(context);
     }
 
-    public LoginDataBaseAdapter open() throws SQLException {
+    public Login open() throws SQLException {
         db = dbHelper.getWritableDatabase();
         return this;
     }

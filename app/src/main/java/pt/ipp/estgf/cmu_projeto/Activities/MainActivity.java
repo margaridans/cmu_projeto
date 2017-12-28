@@ -9,21 +9,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.Login;
+import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.SignUPActivity;
 import pt.ipp.estgf.cmu_projeto.R;
 
 
-public class cmu_projetoActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private Button btnSignUp;
-    private LoginDataBaseAdapter loginDataBaseAdapter;
+    private Login login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cmu_projeto);
 
-        loginDataBaseAdapter = new LoginDataBaseAdapter(this);
-        loginDataBaseAdapter = loginDataBaseAdapter.open();
+        login = new Login(this);
+        login = login.open();
 
         Button btnSignIn = findViewById(R.id.buttonSignIN);
         //btnSignUp =  findViewById(R.id.buttonSignUP);
@@ -45,7 +47,7 @@ public class cmu_projetoActivity extends AppCompatActivity {
 
 
     public void signIn(View V) {
-        final Dialog dialog = new Dialog(cmu_projetoActivity.this);
+        final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.login);
         dialog.setTitle("Login");
         final EditText editTextUserName = dialog
@@ -61,15 +63,15 @@ public class cmu_projetoActivity extends AppCompatActivity {
 
                 String userName = editTextUserName.getText().toString();
                 String password = editTextPassword.getText().toString();
-                String storedPassword = loginDataBaseAdapter
+                String storedPassword = login
                         .getSinlgeEntry(userName);
                 if (password.equals(storedPassword)) {
-                    Toast.makeText(cmu_projetoActivity.this,
+                    Toast.makeText(MainActivity.this,
                             "Login efetuado com sucesso", Toast.LENGTH_LONG)
                             .show();
                     dialog.dismiss();
                 } else {
-                    Toast.makeText(cmu_projetoActivity.this,
+                    Toast.makeText(MainActivity.this,
                             "Username e password não correspondem",
                             Toast.LENGTH_LONG).show();
                 }
@@ -84,6 +86,6 @@ public class cmu_projetoActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        loginDataBaseAdapter.close();
+        login.close();
     }
 }

@@ -1,4 +1,4 @@
-package pt.ipp.estgf.cmu_projeto.Activities;
+package pt.ipp.estgf.cmu_projeto.Activities.Login_Registo;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,20 +9,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import pt.ipp.estgf.cmu_projeto.Activities.MainActivity;
 import pt.ipp.estgf.cmu_projeto.R;
 
 public class SignUPActivity extends Activity {
     EditText editTextUserName, editTextPassword, editTextConfirmPassword;
     Button btnCreateAccount;
     Context context = this;
-    LoginDataBaseAdapter loginDataBaseAdapter;
+    Login login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sinup);
-        loginDataBaseAdapter = new LoginDataBaseAdapter(this);
-        loginDataBaseAdapter = loginDataBaseAdapter.open();
+        login = new Login(this);
+        login = login.open();
         editTextUserName = findViewById(R.id.editTextUserName);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
@@ -49,12 +50,12 @@ public class SignUPActivity extends Activity {
                             .show();
                 } else {
 
-                    loginDataBaseAdapter.insertEntry(nome_user, pass_user);
+                    login.insertEntry(nome_user, pass_user);
                     Toast.makeText(getApplicationContext(),
                             "Account Successfully Created ", Toast.LENGTH_LONG)
                             .show();
                     Intent i = new Intent(SignUPActivity.this,
-                            cmu_projetoActivity.class);
+                            MainActivity.class);
                     startActivity(i);
                     finish();
 
@@ -68,6 +69,6 @@ public class SignUPActivity extends Activity {
         // TODO Auto-generated method stub
         super.onDestroy();
 
-        loginDataBaseAdapter.close();
+        login.close();
     }
 }
