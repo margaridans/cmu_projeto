@@ -13,6 +13,7 @@ import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.Login;
 import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.Registo;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnSignUp;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cmu_projeto);
+        setContentView(R.layout.main_activity);
 
         login = new Login(this);
         login = login.open();
