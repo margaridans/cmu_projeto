@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import pt.ipp.estgf.cmu_projeto.Model.PerguntasJogo;
+import pt.ipp.estgf.cmu_projeto.Model.Perguntas_Jogo;
 import pt.ipp.estgf.cmu_projeto.R;
 import pt.ipp.estgf.database_library.Database.MyDbHelper;
 import pt.ipp.estgf.database_library.Model.Dificuldade;
@@ -19,7 +19,7 @@ import pt.ipp.estgf.database_library.Model.Pergunta;
 
 
 public class JogoTreino extends AppCompatActivity {
-    private PerguntasJogo jogo;
+    private Perguntas_Jogo jogo;
     private Dificuldade dificuldade;
     private TextView txtPergunta;
     private Button btn1, btn2, btn3, btn4;
@@ -30,7 +30,7 @@ public class JogoTreino extends AppCompatActivity {
         setContentView(R.layout.activity_jogo);
 
         ArrayList<Pergunta> listaPerguntas = new ArrayList<>();
-        jogo = new PerguntasJogo(this, -1);
+        jogo = new Perguntas_Jogo(this, -1);
 
         txtPergunta = findViewById(R.id.txtPergunta);
         btn1 = findViewById(R.id.resposta1);
