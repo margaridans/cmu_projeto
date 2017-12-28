@@ -1,33 +1,25 @@
-package pt.ipp.estgf.cmu_projeto;
+package pt.ipp.estgf.cmu_projeto.Activities.Jogo;
 
-import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.Login;
-import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.Registo;
+import pt.ipp.estgf.cmu_projeto.R;
 
 
-
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity  {
+/*
     private Button btnSignUp;
-    private Login login;
+    private Login login;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-
+/*
         login = new Login(this);
         login = login.open();
 
-        Button btnSignIn = findViewById(R.id.buttonSignIN);
+        Button btnSignIn = findViewById(R.id.btnLogin);
         //btnSignUp =  findViewById(R.id.buttonSignUP);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -40,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    public void btnJogarOnClick(View v){
-//        Intent intent = new Intent(getApplicationContext(), JogoPerguntas.class);
-//        startActivity(intent);
-//    }
+    public void btnJogarOnClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MenuJogo.class);
+        startActivity(intent);
+    }
 
 
     public void signIn(View V) {
@@ -55,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText editTextPassword = dialog
                 .findViewById(R.id.editTextPasswordToLogin);
 
-        Button btnSignIn = dialog.findViewById(R.id.buttonSignIn);
+        Button btnSignIn = dialog.findViewById(R.id.btnLogin);
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
 
@@ -87,5 +79,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         login.close();
+    }
+    */
     }
 }

@@ -2,49 +2,78 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:gravity="center_vertical"
-    android:orientation="vertical"
-    android:background="@drawable/background">
+    android:orientation="vertical">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="244dp"
-        android:layout_marginTop="-90dp" />
+        android:background="@drawable/logo"
+        android:layout_width="250dp"
+        android:layout_height="240dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="55dp"
+        android:layout_marginTop="-20dp" />
 
-    <Button
-        android:id="@+id/buttonSignIN"
-        android:layout_width="wrap_content"
-        android:layout_height="79dp"
-        android:background="@drawable/login"
-        android:onClick="signIn"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        android:typeface="sans" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnJogar"
-        android:layout_width="wrap_content"
-        android:layout_height="76dp"
-        android:background="@drawable/game"
-        android:lineSpacingExtra="30sp"
-        android:text="Jogar"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        android:typeface="sans" />
+        <Button
+            android:id="@+id/btnJogar"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/game"
+             />
 
-    <Button
-        android:id="@+id/btnDicas"
-        android:layout_width="wrap_content"
-        android:layout_height="79dp"
-        android:background="@drawable/tips"
-        android:text="Dicas"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        android:typeface="sans" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="-68dp"
+            android:text="Jogar"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
 
+        <Button
+            android:id="@+id/btnDicas"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@drawable/tips"
+            android:textAlignment="center"
+            android:layout_marginLeft="55dp"
+ />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="-68dp"
+            android:text="Dicas"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@drawable/login"
+            android:onClick="signIn"
+            android:layout_marginLeft="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="-68dp"
+            android:text="Login"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
 </LinearLayout>

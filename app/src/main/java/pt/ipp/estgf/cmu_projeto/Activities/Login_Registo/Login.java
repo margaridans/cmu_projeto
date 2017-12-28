@@ -5,11 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AppCompatActivity;
 
 import pt.ipp.estgf.database_library.Database.MyDbHelper;
 
 
-public class Login {
+public class Login extends AppCompatActivity {
 
 
     public SQLiteDatabase db;

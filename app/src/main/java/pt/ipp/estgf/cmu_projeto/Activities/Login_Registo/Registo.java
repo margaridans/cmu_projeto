@@ -1,18 +1,18 @@
 package pt.ipp.estgf.cmu_projeto.Activities.Login_Registo;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import pt.ipp.estgf.cmu_projeto.MainActivity;
+import pt.ipp.estgf.cmu_projeto.Activities.Jogo.MainActivity;
 import pt.ipp.estgf.cmu_projeto.R;
 
-public class Registo extends Activity {
+public class Registo extends AppCompatActivity {
     EditText editTextUserName, editTextPassword, editTextConfirmPassword;
     Button btnCreateAccount;
     Context context = this;
