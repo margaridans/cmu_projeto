@@ -37,10 +37,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if (v.getId() == R.id.btnJogar) {
             Intent intentJogar = new Intent(this, MenuJogo.class);
             startActivity(intentJogar);
-        } //else if (v.getId() == R.id.btnDicas) {
-            //Intent intentDicas = new Intent (this, Dicas.class);
-            //startActivity(intentDicas);
-         else if (v.getId() == R.id.btnLogin) {
+        } /*else if (v.getId() == R.id.btnDicas) {
+            Intent intentDicas = new Intent(this, Dicas.class);
+            startActivity(intentDicas);
+        }*/else if (v.getId() == R.id.btnLogin) {
             Intent intentLogin = new Intent(this, Login.class);
             startActivity(intentLogin);
         }

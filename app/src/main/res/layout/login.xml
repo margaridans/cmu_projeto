@@ -9,19 +9,35 @@
         android:background="#D2B48C"
         android:text="Login">
 
->
     </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/logo"
+        android:text="@string/descImagemLogo" />
 
     <EditText
         android:id="@+id/editTextUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/username"/>
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:drawableLeft="@drawable/password"
+        android:hint="@string/username"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/editTextPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:drawableLeft="@drawable/login_login"
         android:hint="@string/password"
         android:inputType="textPassword" />
 
@@ -30,6 +46,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="25dp"
         android:text="@string/btnEntrar" />
+
+
+    <Button
+        android:id="@+id/btnEntrarFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btnEntrarFacebook" />
+
+
+    <TextView
+        android:id="@+id/perguntaRegisto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="@string/perguntaRegisto" />
+
+    <TextView
+        android:id="@+id/btnRegistar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btnRegistar"
+        android:textStyle="bold" />
 
 </LinearLayout>

@@ -35,27 +35,17 @@ public class Registo extends AppCompatActivity {
 
                 String nome_user = editTextUserName.getText().toString();
                 String pass_user = editTextPassword.getText().toString();
-                String confirmPassword = editTextConfirmPassword.getText()
-                        .toString();
-                if (nome_user.equals("") || pass_user.equals("")
-                        || confirmPassword.equals("")) {
-
-                    Toast.makeText(getApplicationContext(), "Field Vaccant",
-                            Toast.LENGTH_LONG).show();
+                String confirmPassword = editTextConfirmPassword.getText().toString();
+                if (nome_user.equals("") || pass_user.equals("")|| confirmPassword.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Campo vazio", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if (!pass_user.equals(confirmPassword)) {
-                    Toast.makeText(getApplicationContext(),
-                            "Password does not match", Toast.LENGTH_LONG)
-                            .show();
+                    Toast.makeText(getApplicationContext(),"A palavra passe não corresponde", Toast.LENGTH_LONG).show();
                 } else {
-
-                    login.insertEntry(nome_user, pass_user);
-                    Toast.makeText(getApplicationContext(),
-                            "Account Successfully Created ", Toast.LENGTH_LONG)
-                            .show();
-                    Intent i = new Intent(Registo.this,
-                            MainActivity.class);
+                    login.inserirCampos(nome_user, pass_user);
+                    Toast.makeText(getApplicationContext(),"Conta criada com sucesso", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(Registo.this,MainActivity.class);
                     startActivity(i);
                     finish();
 
@@ -66,9 +56,7 @@ public class Registo extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        // TODO Auto-generated method stub
         super.onDestroy();
-
         login.close();
     }
 }

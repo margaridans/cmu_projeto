@@ -22,8 +22,7 @@
         <activity android:name=".Fragments.Jogo" />
         <activity android:name=".Activities.Jogo.FimJogo" />
         <activity android:name=".Activities.Login_Registo.Registo" />
-        <activity android:name=".Activities.Login_Registo.Login" />
-        <activity android:name=".Fragments.CategoriaFragments"></activity>
+        <activity android:name=".Activities.Login_Registo.Login"/>
     </application>
 
 </manifest>

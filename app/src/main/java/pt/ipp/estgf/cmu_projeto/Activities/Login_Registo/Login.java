@@ -1,38 +1,62 @@
 package pt.ipp.estgf.cmu_projeto.Activities.Login_Registo;
 
+import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import pt.ipp.estgf.cmu_projeto.MainActivity;
 import pt.ipp.estgf.cmu_projeto.R;
 import pt.ipp.estgf.database_library.Database.MyDbHelper;
 
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements View.OnClickListener {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
         setContentView(R.layout.login);
-    }
-    /*
 
-    public void signIn(View V) {
-        final Dialog dialog = new Dialog(MainActivity.this);
+        Toolbar toolbarLogin = findViewById(R.id.toolbarLogin);
+        setSupportActionBar(toolbarLogin);
+
+        /*Faz com que os icons sejam clicáveis. Este método apenas tornará o ícone
+        e o título pressionáveis, mas na verdade não adicionarão a funcionalidade de navegar para cima*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+
+    /*Voltar para trás*/
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+
+    public void EntraComCampos(View V) {
+
+        final Context context;
+        context = getApplication();
+        final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.login);
         dialog.setTitle("Login");
+
         final EditText editTextUserName = dialog
-                .findViewById(R.id.editTextUserNameToLogin);
+                .findViewById(R.id.editTextUser);
         final EditText editTextPassword = dialog
-                .findViewById(R.id.editTextPasswordToLogin);
+                .findViewById(R.id.editTextUser);
 
         Button btnSignIn = dialog.findViewById(R.id.btnLogin);
 
@@ -42,17 +66,12 @@ public class Login extends AppCompatActivity {
 
                 String userName = editTextUserName.getText().toString();
                 String password = editTextPassword.getText().toString();
-                String storedPassword = login
-                        .getSinlgeEntry(userName);
-                if (password.equals(storedPassword)) {
-                    Toast.makeText(MainActivity.this,
-                            "Login efetuado com sucesso", Toast.LENGTH_LONG)
-                            .show();
+                String guardarSenha = getPassword(userName);
+                if (password.equals(guardarSenha)) {
+                    Toast.makeText(context, "Login efetuado com sucesso", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
                 } else {
-                    Toast.makeText(MainActivity.this,
-                            "Username e password não correspondem",
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Username e password não correspondem", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -60,7 +79,7 @@ public class Login extends AppCompatActivity {
 
         dialog.show();
     }
-*/
+
 
     public SQLiteDatabase db;
     private final Context context;
@@ -84,35 +103,46 @@ public class Login extends AppCompatActivity {
         return db;
     }
 
-    public void insertEntry(String nome_user, String pass_user) {
+    public void inserirCampos(String nome_user, String pass_user) {
         ContentValues newValues = new ContentValues();
-        newValues.put("USERNAME", nome_user);
-        newValues.put("PASSWORD", pass_user);
+        newValues.put("username", nome_user);
+        newValues.put("password", pass_user);
         db.insert("tblUser", null, newValues);
 
     }
 
 
-
-    public String getSinlgeEntry(String userName) {
-        Cursor cursor = db.query("tblUser", null, " USERNAME=?",
-                new String[] { userName }, null, null, null);
+    public String getPassword(String userName) {
+        Cursor cursor = db.query("tblUser", null, " username=?",
+                new String[]{userName}, null, null, null);
         if (cursor.getCount() < 1) {
             cursor.close();
-            return "NOT EXIST";
+            return "Não existe nenhum utilizador com esses dados";
         }
         cursor.moveToFirst();
-        String password = cursor.getString(cursor.getColumnIndex("PASSWORD"));
+        String password = cursor.getString(cursor.getColumnIndex("password"));
         cursor.close();
         return password;
     }
 
-    public void updateEntry(String userName, String password) {
+    public void atualizarCampos(String userName, String password) {
         ContentValues updatedValues = new ContentValues();
-        updatedValues.put("USERNAME", userName);
-        updatedValues.put("PASSWORD", password);
+        updatedValues.put("username", userName);
+        updatedValues.put("password", password);
 
-        String where = "USERNAME = ?";
-        db.update("LOGIN", updatedValues, where, new String[] { userName });
+        String where = "username = ?";
+        db.update("tblUser", updatedValues, where, new String[]{userName});
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnRegistar) {
+            Intent intentRegisto = new Intent(this, Registo.class);
+            startActivity(intentRegisto);
+        } else if(v.getId()== R.id.btnEntrar) {
+            Intent intentEntrar = new Intent(this, MainActivity.class);
+            startActivity(intentEntrar);
+        }
     }
 }
