@@ -2,30 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarLogin"
+        android:background="#D2B48C"
+        android:text="Login">
+
+>
+    </android.support.v7.widget.Toolbar>
 
     <EditText
-        android:id="@+id/editTextUserNameToLogin"
+        android:id="@+id/editTextUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="User Name" >
-
-        <requestFocus />
-    </EditText>
+        android:hint="@string/username"/>
 
     <EditText
-        android:id="@+id/editTextPasswordToLogin"
+        android:id="@+id/editTextPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/buttonSignIn"
-        android:layout_width="fill_parent"
+        android:id="@+id/btnEntrar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In" />
+        android:layout_gravity="center"
+        android:text="@string/btnEntrar" />
 
 </LinearLayout>

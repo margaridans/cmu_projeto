@@ -5,13 +5,24 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import pt.ipp.estgf.cmu_projeto.R;
 import pt.ipp.estgf.database_library.Database.MyDbHelper;
 
 
 public class Login extends AppCompatActivity {
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+
+        setContentView(R.layout.login);
+    }
     /*
 
     public void signIn(View V) {
