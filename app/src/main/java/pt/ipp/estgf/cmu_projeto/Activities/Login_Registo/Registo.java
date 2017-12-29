@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import pt.ipp.estgf.cmu_projeto.Activities.Jogo.MainActivity;
+import pt.ipp.estgf.cmu_projeto.MainActivity;
 import pt.ipp.estgf.cmu_projeto.R;
 
 public class Registo extends AppCompatActivity {

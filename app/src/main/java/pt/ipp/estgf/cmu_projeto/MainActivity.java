@@ -1,4 +1,4 @@
-package pt.ipp.estgf.cmu_projeto.Activities.Jogo;
+package pt.ipp.estgf.cmu_projeto;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+import pt.ipp.estgf.cmu_projeto.Activities.Jogo.MenuJogo;
 import pt.ipp.estgf.cmu_projeto.Activities.Login_Registo.Login;
-import pt.ipp.estgf.cmu_projeto.R;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
