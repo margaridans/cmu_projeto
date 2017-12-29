@@ -28,7 +28,7 @@ public class Registo extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
 
-        btnCreateAccount = findViewById(R.id.buttonCreateAccount);
+        btnCreateAccount = findViewById(R.id.btnCriarConta);
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {

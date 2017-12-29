@@ -20,7 +20,7 @@ import pt.ipp.estgf.cmu_projeto.R;
 import pt.ipp.estgf.database_library.Database.MyDbHelper;
 
 
-public class Login extends AppCompatActivity implements View.OnClickListener {
+public class  Login extends AppCompatActivity implements View.OnClickListener {
 
 
     @Override
